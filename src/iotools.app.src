@@ -1,0 +1,15 @@
+{application, iotools,
+ [{description, "Useful tools for Erlang's IO control"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {iotools_app, []}},
+  {applications,
+   [stdlib]},
+  {env,[
+   {standard_io, [{encoding,unicode}]},
+   {standard_error, [{encoding,unicode}]}
+  ]},
+  {modules, []},
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.

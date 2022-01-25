@@ -26,8 +26,7 @@
 %%
 -spec setopts(io:device()) -> ok | {error, term()}.
 setopts(Device) ->
-    _ = io:setopts(Device, get_opts(Device)),
-    ok.
+    ok = io:setopts(Device, get_opts(Device)).
 
 get_opts(Device) ->
     application:get_env(?APP, Device).

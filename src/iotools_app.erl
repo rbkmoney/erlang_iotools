@@ -21,11 +21,6 @@
 -behaviour(application).
 -export([start/2, stop/1]).
 
--behaviour(supervisor).
-
--export([start_link/0]).
--export([init/1]).
-
 start(_StartType, _StartArgs) ->
     ok = iotools:setopts(standard_io),
     ok = iotools:setopts(standard_error),
@@ -34,8 +29,13 @@ start(_StartType, _StartArgs) ->
 stop(_State) ->
     ok.
 
+-behaviour(supervisor).
+
+-export([start_link/0]).
+-export([init/1]).
+
 start_link() ->
     supervisor:start_link({local, ?SERVER}, ?MODULE, []).
 
 init([]) ->
-    {ok, {#{strategy => one_for_all, intensity => 0, period => 1}, []}}.
+    {ok, {#{}, []}}.

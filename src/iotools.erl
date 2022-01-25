@@ -29,4 +29,4 @@ setopts(Device) ->
     ok = io:setopts(Device, get_opts(Device)).
 
 get_opts(Device) ->
-    application:get_env(?APP, Device).
+    application:get_env(?APP, Device, []).

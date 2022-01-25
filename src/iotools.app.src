@@ -4,7 +4,10 @@
   {registered, []},
   {mod, {iotools_app, []}},
   {applications,
-   [stdlib]},
+   [
+    kernel,
+    stdlib
+   ]},
   {env,[
    {standard_io, [{encoding,unicode}]},
    {standard_error, [{encoding,unicode}]}

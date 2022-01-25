@@ -38,4 +38,4 @@ start_link() ->
     supervisor:start_link({local, ?SERVER}, ?MODULE, []).
 
 init([]) ->
-    {ok, {#{strategy => one_for_all, intensity => 0, period => 1}, []}}.
+    {ok, {#{}, []}}.
